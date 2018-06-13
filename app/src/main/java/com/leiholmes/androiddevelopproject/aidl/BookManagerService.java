@@ -78,21 +78,10 @@ public class BookManagerService extends Service {
         super.onDestroy();
     }
 
-    private void onNewBookArrived(Book newBook) throws RemoteException {
-        mBookList.add(newBook);
-        Log.d(TAG, "onNewBookArrived, notify listeners：" + mListenerList.size());
-        for (int i = 0; i < mListenerList.size(); i++) {
-            IOnNewBookArrivedListener listener = mListenerList.get(i);
-            Log.d(TAG, "onNewBookArrived, notify listener：" + listener);
-            listener.onNewBookArrived(newBook);
-        }
-    }
-
     private class ServiceWorker implements Runnable {
-
         @Override
         public void run() {
-            //后台运行
+            //后台运行，每5秒加入一本新书
             while (!mIsServiceDestory.get()) {
                 try {
                     Thread.sleep(5000);
@@ -107,6 +96,16 @@ public class BookManagerService extends Service {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    private void onNewBookArrived(Book newBook) throws RemoteException {
+        mBookList.add(newBook);
+        Log.d(TAG, "onNewBookArrived, notify listeners：" + mListenerList.size());
+        for (int i = 0; i < mListenerList.size(); i++) {
+            IOnNewBookArrivedListener listener = mListenerList.get(i);
+            Log.d(TAG, "onNewBookArrived, notify listener：" + listener);
+            listener.onNewBookArrived(newBook);
         }
     }
 }

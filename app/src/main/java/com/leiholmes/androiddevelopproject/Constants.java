@@ -8,4 +8,5 @@ package com.leiholmes.androiddevelopproject;
 public class Constants {
     public static final int MSG_FROM_CLIENT = 1;
     public static final int MSG_FROM_SERVICE = 2;
+    public static final int MSG_NEW_BOOK_ARRIVED = 3;
 }
