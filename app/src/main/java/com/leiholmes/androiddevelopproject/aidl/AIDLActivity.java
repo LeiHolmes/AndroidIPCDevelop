@@ -1,5 +1,6 @@
 package com.leiholmes.androiddevelopproject.aidl;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class AIDLActivity extends AppCompatActivity {
 
     private IBookManager mBookManager;
 
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -40,6 +42,7 @@ public class AIDLActivity extends AppCompatActivity {
         }
     };
 
+    //新书被添加监听
     private IOnNewBookArrivedListener mListener = new IOnNewBookArrivedListener.Stub() {
         @Override
         public void onNewBookArrived(Book newBook) throws RemoteException {
@@ -52,13 +55,17 @@ public class AIDLActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             IBookManager bookManager = IBookManager.Stub.asInterface(service);
+            mBookManager = bookManager;
             try {
+                //获取图书列表
                 List<Book> bookList = bookManager.getBookList();
                 Log.i(TAG, "Client：Get book list：" + bookList.toString());
+                //添加新书
                 Book newBook = new Book(3, "Android你想不想来");
                 bookManager.addBook(newBook);
                 List<Book> newBookList = bookManager.getBookList();
                 Log.i(TAG, "Client：Get new book list：" + newBookList.toString());
+                //注册新书监听
                 Log.i(TAG, "Client：Register listener：" + mListener);
                 bookManager.registerListener(mListener);
             } catch (RemoteException e) {
@@ -83,6 +90,7 @@ public class AIDLActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        //取消注册新书监听
         if (mBookManager != null && mBookManager.asBinder().isBinderAlive()) {
             try {
                 Log.i(TAG, "Client：Unregister listener：" + mListener);
@@ -91,6 +99,7 @@ public class AIDLActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        //解绑服务
         unbindService(mConnection);
         super.onDestroy();
     }
