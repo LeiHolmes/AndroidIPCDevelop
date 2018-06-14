@@ -53,10 +53,12 @@ public class AIDLActivity extends AppCompatActivity {
     //与服务端Service连接监听
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            IBookManager bookManager = IBookManager.Stub.asInterface(service);
+        public void onServiceConnected(ComponentName name, IBinder binder) {
+            IBookManager bookManager = IBookManager.Stub.asInterface(binder);
             mBookManager = bookManager;
             try {
+                //设置Binder死亡代理
+                binder.linkToDeath(mDeathRecipient, 0);
                 //获取图书列表
                 List<Book> bookList = bookManager.getBookList();
                 Log.i(TAG, "Client：Get book list：" + bookList.toString());
@@ -77,6 +79,21 @@ public class AIDLActivity extends AppCompatActivity {
         public void onServiceDisconnected(ComponentName name) {
             mBookManager = null;
             Log.e(TAG, "Client：Binder died!");
+        }
+    };
+
+    //Binder死亡代理
+    private IBinder.DeathRecipient mDeathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            if (mBookManager != null) {
+                Log.i(TAG, "Client：Binder died, Reconnect service!");
+                mBookManager.asBinder().unlinkToDeath(mDeathRecipient, 0);
+                mBookManager = null;
+                //重新绑定Service
+                Intent intent = new Intent(AIDLActivity.this, BookManagerService.class);
+                bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+            }
         }
     };
 
