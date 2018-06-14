@@ -15,7 +15,7 @@ public class ProviderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); 
         setContentView(R.layout.activity_provider);
         Uri uri = Uri.parse("content://com.leiholmes.androiddevelopproject.contentprovider");
         getContentResolver().query(uri, null, null, null, null);
