@@ -20,4 +20,11 @@
         android:layout_height="wrap_content"
         android:text="AIDL"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_provider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ContentProvider"
+        android:textAllCaps="false" />
 </LinearLayout>
