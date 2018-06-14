@@ -113,7 +113,7 @@ public class AIDLActivity extends AppCompatActivity {
                 Log.i(TAG, "Client：Unregister listener：" + mListener);
                 mBookManager.unregisterListener(mListener);
             } catch (RemoteException e) {
-                e.printStackTrace();
+                e.printStackTrace(); 
             }
         }
         //解绑服务
