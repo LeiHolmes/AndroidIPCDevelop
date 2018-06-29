@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.contentprovider;
+package com.leiholmes.androidipcdevelop.contentprovider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -25,7 +25,7 @@ public class BookProvider extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
-        Log.i(TAG, "ContentProvider: query, current thread：" + Thread.currentThread().getName());
+        Log.i(TAG, "ContentProvider: query, cugfrrent thread：" + Thread.currentThread().getName());
         return null;
     }
 

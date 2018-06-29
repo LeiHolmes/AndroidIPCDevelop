@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.serialization;
+package com.leiholmes.androidipcdevelop.serialization;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

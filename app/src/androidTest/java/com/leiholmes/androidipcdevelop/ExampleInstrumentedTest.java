@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject;
+package com.leiholmes.androidipcdevelop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

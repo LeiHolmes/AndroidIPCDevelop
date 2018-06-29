@@ -1,13 +1,13 @@
-package com.leiholmes.androiddevelopproject;
+package com.leiholmes.androidipcdevelop;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.leiholmes.androiddevelopproject.aidl.AIDLActivity;
-import com.leiholmes.androiddevelopproject.contentprovider.ProviderActivity;
-import com.leiholmes.androiddevelopproject.messenger.MessengerActivity;
+import com.leiholmes.androidipcdevelop.aidl.AIDLActivity;
+import com.leiholmes.androidipcdevelop.contentprovider.ProviderActivity;
+import com.leiholmes.androidipcdevelop.messenger.MessengerActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.serialization;
+package com.leiholmes.androidipcdevelop.serialization;
 
 import android.os.Parcel;
 import android.os.Parcelable;

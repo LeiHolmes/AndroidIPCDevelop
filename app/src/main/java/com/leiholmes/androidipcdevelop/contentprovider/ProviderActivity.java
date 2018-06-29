@@ -1,10 +1,10 @@
-package com.leiholmes.androiddevelopproject.contentprovider;
+package com.leiholmes.androidipcdevelop.contentprovider;
 
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.leiholmes.androiddevelopproject.R;
+import com.leiholmes.androidipcdevelop.R;
 
 /**
  * Description:   Contentprovider使用

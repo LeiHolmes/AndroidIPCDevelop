@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.aidl;
+package com.leiholmes.androidipcdevelop.aidl;
 
 import android.app.Service;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.messenger;
+package com.leiholmes.androidipcdevelop.messenger;
 
 import android.app.Service;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.leiholmes.androiddevelopproject.Constants;
+import com.leiholmes.androidipcdevelop.Constants;
 
 /**
  * Description:   服务端

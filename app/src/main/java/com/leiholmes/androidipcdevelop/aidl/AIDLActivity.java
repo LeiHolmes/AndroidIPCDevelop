@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.aidl;
+package com.leiholmes.androidipcdevelop.aidl;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
@@ -13,8 +13,8 @@ import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.leiholmes.androiddevelopproject.Constants;
-import com.leiholmes.androiddevelopproject.R;
+import com.leiholmes.androidipcdevelop.Constants;
+import com.leiholmes.androidipcdevelop.R;
 
 import java.util.List;
 

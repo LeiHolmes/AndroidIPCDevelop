@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.binder;
+package com.leiholmes.androidipcdevelop.binder;
 
 import android.os.Parcel;
 import android.os.Parcelable;

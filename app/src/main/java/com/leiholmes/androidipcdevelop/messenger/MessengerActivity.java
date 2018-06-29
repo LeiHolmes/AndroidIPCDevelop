@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.messenger;
+package com.leiholmes.androidipcdevelop.messenger;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,8 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.leiholmes.androiddevelopproject.Constants;
-import com.leiholmes.androiddevelopproject.R;
+import com.leiholmes.androidipcdevelop.Constants;
+import com.leiholmes.androidipcdevelop.R;
 
 import org.w3c.dom.Comment;
 

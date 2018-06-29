@@ -1,4 +1,4 @@
-package com.leiholmes.androiddevelopproject.binder;
+package com.leiholmes.androidipcdevelop.binder;
 
 import android.os.Binder;
 import android.os.IBinder;
@@ -29,7 +29,7 @@ public class PetManagerImpl extends Binder implements IPetManager {
             return null;
         }
         IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-        if (((iin != null) && (iin instanceof com.leiholmes.androiddevelopproject.aidl.IBookManager))) {
+        if (((iin != null) && (iin instanceof com.leiholmes.androidipcdevelop.aidl.IBookManager))) {
             return ((IPetManager) iin);
         }
         return new PetManagerImpl.Proxy(obj);
