@@ -1,6 +1,6 @@
-package com.leiholmes.androiddevelopproject.aidl;
+package com.leiholmes.androidipcdevelop.aidl;
 
-import com.leiholmes.androiddevelopproject.aidl.Book;
+import com.leiholmes.androidipcdevelop.aidl.Book;
 
 interface IOnNewBookArrivedListener {
     void onNewBookArrived(in Book newBook);

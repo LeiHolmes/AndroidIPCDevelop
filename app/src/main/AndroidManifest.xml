@@ -39,9 +39,10 @@
             android:process=":provider" />
 
         <service
-            android:name=".socket.TCPServerService"
+            android:name=".socket.TcpServerService"
             android:process=":remote" />
 
+        <activity android:name=".socket.TcpClientActivity" />
     </application>
 
 </manifest>

@@ -1,8 +1,8 @@
 // IBookManager.aidl
-package com.leiholmes.androiddevelopproject.aidl;
+package com.leiholmes.androidipcdevelop.aidl;
 
-import com.leiholmes.androiddevelopproject.aidl.Book;
-import com.leiholmes.androiddevelopproject.aidl.IOnNewBookArrivedListener;
+import com.leiholmes.androidipcdevelop.aidl.Book;
+import com.leiholmes.androidipcdevelop.aidl.IOnNewBookArrivedListener;
 
 interface IBookManager {
     //所有的返回值前都不需要加任何东西，不管是什么数据类型

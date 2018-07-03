@@ -20,7 +20,7 @@ import java.util.Random;
  * author         xulei
  * Date           2018/7/2 16:57
  */
-public class TCPServerService extends Service {
+public class TcpServerService extends Service {
     private static final String TAG = "TestTCPServerService";
 
     private boolean mIsServiceDestoryed = false;
@@ -31,12 +31,12 @@ public class TCPServerService extends Service {
             "I'm glad to talk with you!",
             "See you!"};
 
-    public TCPServerService() {
+    public TcpServerService() {
     }
 
     @Override
     public void onCreate() {
-
+        new Thread(new TcpServer()).start();
         super.onCreate();
     }
 
@@ -60,7 +60,7 @@ public class TCPServerService extends Service {
                 //监听本地8688端口
                 serverSocket = new ServerSocket(8688);
             } catch (IOException e) {
-                Log.e(TAG, "Tcp server failed, port: 8688");
+                Log.e(TAG, "Server---Tcp server failed, port: 8688");
                 e.printStackTrace();
                 return;
             }
@@ -69,7 +69,7 @@ public class TCPServerService extends Service {
                 try {
                     //接收客户端Socket
                     final Socket client = serverSocket.accept();
-                    Log.v(TAG, "Accept client socket");
+                    Log.e(TAG, "Server---Accept client socket");
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -98,15 +98,15 @@ public class TCPServerService extends Service {
         out.println("Welcome to chatroom!");
         while (!mIsServiceDestoryed) {
             String clientMessage = in.readLine();
-            Log.v(TAG, "Msg from client:" + clientMessage);
+            Log.e(TAG, "Server---Msg from client: " + clientMessage);
             if (clientMessage == null) {
                 break;
             }
             String serverResponse = mServiceResoponseMessage[new Random().nextInt(mServiceResoponseMessage.length)];
             out.println(serverResponse);
-            Log.v(TAG, "Server response msg:" + serverResponse);
+            Log.e(TAG, "Server---Server response msg: " + serverResponse);
         }
-        Log.v(TAG, "Client quit");
+        Log.e(TAG, "Server---Client quit");
         out.close();
         in.close();
         client.close();
