@@ -66,7 +66,7 @@ public class TcpClientActivity extends AppCompatActivity {
             }
         }
     };
-
+ 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
