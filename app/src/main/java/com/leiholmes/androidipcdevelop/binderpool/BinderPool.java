@@ -19,7 +19,6 @@ import java.util.concurrent.CountDownLatch;
  */
 public class BinderPool {
     private static final String TAG = "TestBinderPool";
-    public static final int BINDER_NONE = -1;
     public static final int BINDER_COMPUTE = 0;
     public static final int BINDER_SECURITY_CENTER = 1;
 
