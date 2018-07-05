@@ -34,4 +34,11 @@
         android:layout_height="wrap_content"
         android:text="Socket"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_binder_pool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BinderPool"
+        android:textAllCaps="false" />
 </LinearLayout>

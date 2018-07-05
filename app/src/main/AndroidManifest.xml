@@ -43,6 +43,12 @@
             android:process=":remote" />
 
         <activity android:name=".socket.TcpClientActivity" />
+
+        <service
+            android:name=".binderpool.BinderPoolService"
+            android:process=":remote" />
+
+        <activity android:name=".binderpool.BinderPoolActivity"></activity>
     </application>
 
 </manifest>

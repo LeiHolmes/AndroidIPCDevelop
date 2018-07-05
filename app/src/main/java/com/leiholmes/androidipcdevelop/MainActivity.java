@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.leiholmes.androidipcdevelop.aidl.AIDLActivity;
+import com.leiholmes.androidipcdevelop.binderpool.BinderPoolActivity;
 import com.leiholmes.androidipcdevelop.contentprovider.ProviderActivity;
 import com.leiholmes.androidipcdevelop.messenger.MessengerActivity;
 import com.leiholmes.androidipcdevelop.socket.TcpClientActivity;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_messenger, R.id.btn_aidl, R.id.btn_provider, R.id.btn_socket})
+    @OnClick({R.id.btn_messenger, R.id.btn_aidl, R.id.btn_provider, R.id.btn_socket, R.id.btn_binder_pool})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_messenger:
@@ -41,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_socket:
                 startActivity(new Intent(this, TcpClientActivity.class));
+                break;
+            case R.id.btn_binder_pool:
+                startActivity(new Intent(this, BinderPoolActivity.class));
                 break;
         }
     }
