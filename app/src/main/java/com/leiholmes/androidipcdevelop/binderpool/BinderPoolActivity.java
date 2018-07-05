@@ -26,7 +26,7 @@ public class BinderPoolActivity extends AppCompatActivity {
             @Override
             public void run() {
                 BinderPool binderPool = BinderPool.getInstanse(BinderPoolActivity.this);
-
+ 
                 Log.e(TAG, "binderPoolClient: " + "-----SecurityCenter-----");
                 IBinder securityCenterImpl = binderPool.queryBinder(BinderPool.BINDER_SECURITY_CENTER);
                 ISecurityCenter securityCenter = SecurityCenterImpl.asInterface(securityCenterImpl);
